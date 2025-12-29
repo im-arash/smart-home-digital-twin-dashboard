@@ -1,0 +1,10 @@
+# Qt build files
+guide/build/
+
+# Qt Creator user/project files
+guide/.qtcreator/
+guide/*.user
+guide/*.pro.user*
+guide/*.moc
+guide/*.rcc
+guide/*.ui.h
