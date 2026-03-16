@@ -15,6 +15,13 @@ ApplicationWindow {
     Material.theme: Material.Dark
     Material.accent: Material.LightBlue
 
+    FontLoader {
+        id: materialIcons
+        source: "MaterialSymbolsSharp.ttf"
+    }
+
+
+
     Rectangle{
         anchors.fill: parent
         color: "#505050"

@@ -16,19 +16,27 @@ Item{
             anchors.fill: parent
             Rectangle{
                 Layout.topMargin: 20
-                color: "white"
+                color: "transparent"
                 height: 40
                 width: 40
                 radius: 10
                 Layout.alignment: Qt.AlignHCenter
+
+                MaterialIcon {
+                    icon: "home"
+                }
             }
 
             Rectangle{
-                color: "white"
+                color: "transparent"
                 height: 40
                 width: 40
                 radius: 10
                 Layout.alignment: Qt.AlignHCenter
+
+                MaterialIcon {
+                    icon: "search"
+                }
             }
 
             Rectangle{
