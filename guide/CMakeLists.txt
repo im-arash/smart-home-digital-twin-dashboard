@@ -21,6 +21,7 @@ qt_add_qml_module(appguide
         RESOURCES
         MaterialSymbolsSharp.ttf
         QML_FILES MaterialIcon.qml
+        QML_FILES ThermostatDial.qml
 )
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.

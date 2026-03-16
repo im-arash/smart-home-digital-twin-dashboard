@@ -2,7 +2,7 @@ import QtQuick
 import QtQuick.Layouts
 
 Item{
-    width: 80
+    width: 70
     height: parent.height
     Rectangle{
         anchors.fill: parent
@@ -14,17 +14,19 @@ Item{
         ColumnLayout{
             spacing: 20
             anchors.fill: parent
-            Rectangle{
+            Rectangle {
                 Layout.topMargin: 20
-                color: "transparent"
-                height: 40
-                width: 40
-                radius: 10
+                height: 40; width: 40; radius: 10
                 Layout.alignment: Qt.AlignHCenter
+                color: "transparent"
 
                 MaterialIcon {
-                    icon: "home"
+                    anchors.centerIn: parent
+                    icon: "home_app_logo"
                 }
+
+                HoverHandler {onHoveredChanged: parent.color = hovered ? "gray" : "transparent"}
+                TapHandler { onTapped: console.log("clicked home_app_logo") }
             }
 
             Rectangle{
@@ -34,18 +36,25 @@ Item{
                 radius: 10
                 Layout.alignment: Qt.AlignHCenter
 
-                MaterialIcon {
-                    icon: "search"
-                }
+                MaterialIcon {icon: "search"}
+
+                HoverHandler {onHoveredChanged: parent.color = hovered ? "gray" : "transparent"}
+                TapHandler { onTapped: console.log("clicked home_app_logo") }
             }
 
             Rectangle{
-                color: "white"
+                color: "transparent"
                 height: 40
                 width: 40
                 radius: 10
                 Layout.alignment: Qt.AlignHCenter
+
+                MaterialIcon {icon: "apps"}
+
+                HoverHandler {onHoveredChanged: parent.color = hovered ? "gray" : "transparent"}
+                TapHandler { onTapped: console.log("clicked home_app_logo") }
             }
+
             //--- Space ---
             Rectangle{
                 Layout.fillHeight: true
@@ -53,11 +62,16 @@ Item{
 
             Rectangle{
                 Layout.bottomMargin: 20
-                color: "white"
+                color: "transparent"
                 height: 40
                 width: 40
                 radius: 10
                 Layout.alignment: Qt.AlignHCenter | Qt.AlignBottom
+
+                MaterialIcon {icon: "power_settings_new"}
+
+                HoverHandler {onHoveredChanged: parent.color = hovered ? "gray" : "transparent"}
+                TapHandler { onTapped: console.log("clicked home_app_logo") }
             }
         }
     }
