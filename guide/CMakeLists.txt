@@ -9,6 +9,11 @@ find_package(Qt6 REQUIRED COMPONENTS Quick Sql)
 
 qt_standard_project_setup(REQUIRES 6.8)
 
+
+set_source_files_properties(Style.qml
+    PROPERTIES QT_QML_SINGLETON_TYPE TRUE
+)
+
 qt_add_executable(appguide
     main.cpp
 )
@@ -17,17 +22,20 @@ qt_add_qml_module(appguide
     URI guide
     QML_FILES
         Main.qml
-        QML_FILES MainMenu.qml
-        QML_FILES MaterialIcon.qml
-        QML_FILES ThermostatDial.qml
-        QML_FILES MembersWidget.qml
+        Style.qml
+        resources/components/MainMenu.qml
+        resources/components/MaterialIcon.qml
+        resources/components/ThermostatDial.qml
+        resources/components/MembersWidget.qml
+
         RESOURCES
-        MaterialSymbolsSharp.ttf
+        resources/icons/MaterialSymbolsSharp.ttf
         resources/images/members/daughter.webp
         resources/images/members/father.webp
         resources/images/members/son.webp
         resources/images/members/mom.webp
-
+        QML_FILES resources/components/TopMenu.qml
+        QML_FILES resources/components/WeatherWidget.qml
 )
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.

@@ -5,8 +5,30 @@ import QtQuick.Controls.Material
 import QtQuick.Shapes
 
 Item {
-    width: 300
-    height: 500
+    Layout.preferredWidth: 300
+    Layout.fillHeight: true
+
+    component CircularIconButton : Rectangle {
+        property string iconName
+        property int size: 50
+        signal clicked()
+
+        width: size
+        height: size
+        radius: size / 2
+        color: tapHandler.pressed ? "#404040" : (hoverHandler.hovered ? "#808080" : "#606060")
+
+        MaterialIcon {
+            anchors.centerIn: parent
+            icon: iconName
+        }
+
+        HoverHandler { id: hoverHandler }
+        TapHandler {
+            id: tapHandler
+            onTapped: parent.clicked()
+        }
+    }
 
     Rectangle {
         anchors.fill: parent
@@ -16,35 +38,37 @@ Item {
             GradientStop { position: 1.0; color: "#505050" }
         }
 
-        ColumnLayout{
+        ColumnLayout {
             anchors.fill: parent
             spacing: 15
-            RowLayout{
+
+            // -- Header --
+            RowLayout {
                 Layout.margins: 20
                 Layout.fillWidth: true
-                Text{
+
+                Text {
                     text: "Thermostat"
                     color: "white"
                     font.pixelSize: 16
                     font.bold: true
                 }
-                Rectangle{Layout.fillWidth: true}
-                Switch{
 
-                }
+                Item { Layout.fillWidth: true } // spacer
+
+                Switch {}
             }
 
-
-
+            // -- Dial Control --
             Dial {
                 id: control
                 Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
+                Layout.preferredWidth: 250
+                Layout.preferredHeight: 250
                 from: 10
                 to: 35
                 stepSize: 1
                 value: 20
-                Layout.preferredWidth: 250
-                Layout.preferredHeight: 250
 
                 background: Item {
                     Layout.preferredWidth: 250
@@ -64,8 +88,6 @@ Item {
                     Shape {
                         anchors.fill: parent
                         antialiasing: true
-
-                        // Force high-quality antialiasing using multisampling
                         layer.enabled: true
                         layer.samples: 8
 
@@ -73,7 +95,6 @@ Item {
                             fillColor: "transparent"
                             strokeColor: "deepskyblue"
                             strokeWidth: 15
-                            // Change to ShapePath.RoundCap if you want the ends of the blue bar to be rounded
                             capStyle: ShapePath.FlatCap
 
                             PathAngleArc {
@@ -103,9 +124,7 @@ Item {
                             y: parent.height / 2 - height / 2
 
                             transform: [
-                                Translate {
-                                    y: -parent.height / 2 + 25
-                                },
+                                Translate { y: -parent.height / 2 + 25 },
                                 Rotation {
                                     angle: -140 + (index / (tickRepeater.model - 1)) * 280
                                     origin.x: tick.width / 2
@@ -116,6 +135,7 @@ Item {
                     }
                 }
 
+                // Center Text Display
                 Item {
                     anchors.centerIn: parent
 
@@ -138,6 +158,7 @@ Item {
                     }
                 }
 
+                // Draggable Handle
                 handle: Rectangle {
                     id: handleItem
                     x: control.background.x + control.background.width / 2 - width / 2
@@ -145,13 +166,12 @@ Item {
                     width: 30
                     height: 30
                     color: control.pressed ? "dodgerblue" : "LightBlue"
-                    radius: 30
+                    radius: 15 // width / 2
                     antialiasing: true
                     opacity: control.enabled ? 1 : 0.3
+
                     transform: [
-                        Translate {
-                            y: -Math.min(control.background.width, control.background.height) * 0.47
-                        },
+                        Translate { y: -Math.min(control.background.width, control.background.height) * 0.47 },
                         Rotation {
                             angle: control.angle
                             origin.x: handleItem.width / 2
@@ -159,80 +179,63 @@ Item {
                         }
                     ]
 
+                    // Inner dot
                     Rectangle {
                         anchors.centerIn: parent
                         width: 15
                         height: 15
-                        radius: 15
+                        radius: 7.5 // width / 2
                         color: "#909090"
                     }
                 }
             }
 
-            //-- increase decrease buttons--
-            RowLayout{
+            // -- Increase / Decrease Buttons --
+            RowLayout {
                 Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
                 spacing: 20
-                Rectangle{
-                    width: 36
-                    height: 36
-                    radius: 36
-                    color: "gray"
-                    MaterialIcon {
-                        anchors.centerIn: parent
-                        icon: "check_indeterminate_small"
-                    }
+
+                CircularIconButton {
+                    size: 36
+                    iconName: "check_indeterminate_small" // Acts as minus
+                    onClicked: control.decrease()
                 }
 
-                Rectangle{
-                    width: 36
-                    height: 36
-                    radius: 36
-                    color: "gray"
-                    MaterialIcon {
-                        anchors.centerIn: parent
-                        icon: "add"
-                    }
+                CircularIconButton {
+                    size: 36
+                    iconName: "add"
+                    onClicked: control.increase()
                 }
             }
 
-            //--Action Buttons--
-            ColumnLayout{
-                Text{text: "Actions"; color: "white";Layout.leftMargin: 20}
+            // -- Action Buttons --
+            ColumnLayout {
                 Layout.fillWidth: true
                 spacing: 10
+
+                Text {
+                    text: "Actions"
+                    color: "white"
+                    Layout.leftMargin: 20
+                }
+
                 RowLayout {
                     Layout.fillWidth: true
                     spacing: 15
 
-                    Item { Layout.fillWidth: true }   // left spacer
+                    Item { Layout.fillWidth: true } // left spacer
 
-                    Rectangle {
-                        width: 50; height: 50; radius: 50; color: "gray"
-                        MaterialIcon { anchors.centerIn: parent; icon: "mode_fan" }
-                    }
-                    Rectangle {
-                        width: 50; height: 50; radius: 50; color: "gray"
-                        MaterialIcon { anchors.centerIn: parent; icon: "local_fire_department" }
-                    }
-                    Rectangle {
-                        width: 50; height: 50; radius: 50; color: "gray"
-                        MaterialIcon { anchors.centerIn: parent; icon: "severe_cold" }
-                    }
-                    Rectangle {
-                        width: 50; height: 50; radius: 50; color: "gray"
-                        MaterialIcon { anchors.centerIn: parent; icon: "nest_eco_leaf" }
-                    }
+                    CircularIconButton { iconName: "mode_fan"; onClicked: console.log("Fan mode") }
+                    CircularIconButton { iconName: "local_fire_department"; onClicked: console.log("Heat mode") }
+                    CircularIconButton { iconName: "severe_cold"; onClicked: console.log("Cool mode") }
+                    CircularIconButton { iconName: "nest_eco_leaf"; onClicked: console.log("Eco mode") }
 
-                    Item { Layout.fillWidth: true }   // right spacer
+                    Item { Layout.fillWidth: true } // right spacer
                 }
-
             }
-            //-- Bottom Space--
-            Rectangle{Layout.fillHeight: true}
 
+            // -- Bottom Space --
+            Item { Layout.fillHeight: true }
         }
-
-
     }
 }
