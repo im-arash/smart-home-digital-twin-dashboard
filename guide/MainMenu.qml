@@ -1,15 +1,16 @@
 import QtQuick
 import QtQuick.Layouts
+import QtQuick.Layouts
 
 Item{
-    width: 70
-    height: parent.height
+    Layout.preferredWidth: 78
+    Layout.fillHeight: true
     Rectangle{
         anchors.fill: parent
         radius: 20
         gradient: Gradient {
-            GradientStop { position: 0.0; color: "#909090" }
-            GradientStop { position: 1.0; color: "#707070" }
+            GradientStop { position: 0.0; color: "#808080" }
+            GradientStop { position: 1.0; color: "#505050" }
         }
         ColumnLayout{
             spacing: 20
@@ -25,7 +26,7 @@ Item{
                     icon: "home_app_logo"
                 }
 
-                HoverHandler {onHoveredChanged: parent.color = hovered ? "gray" : "transparent"}
+                HoverHandler {onHoveredChanged: parent.color = hovered ? "#606060" : "transparent"}
                 TapHandler { onTapped: console.log("clicked home_app_logo") }
             }
 
@@ -38,7 +39,7 @@ Item{
 
                 MaterialIcon {icon: "search"}
 
-                HoverHandler {onHoveredChanged: parent.color = hovered ? "gray" : "transparent"}
+                HoverHandler {onHoveredChanged: parent.color = hovered ? "#606060" : "transparent"}
                 TapHandler { onTapped: console.log("clicked home_app_logo") }
             }
 
@@ -51,7 +52,7 @@ Item{
 
                 MaterialIcon {icon: "apps"}
 
-                HoverHandler {onHoveredChanged: parent.color = hovered ? "gray" : "transparent"}
+                HoverHandler {onHoveredChanged: parent.color = hovered ? "#606060" : "transparent"}
                 TapHandler { onTapped: console.log("clicked home_app_logo") }
             }
 
@@ -70,7 +71,7 @@ Item{
 
                 MaterialIcon {icon: "power_settings_new"}
 
-                HoverHandler {onHoveredChanged: parent.color = hovered ? "gray" : "transparent"}
+                HoverHandler {onHoveredChanged: parent.color = hovered ? "#606060" : "transparent"}
                 TapHandler { onTapped: console.log("clicked home_app_logo") }
             }
         }

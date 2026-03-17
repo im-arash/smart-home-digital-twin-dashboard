@@ -21,20 +21,34 @@ ApplicationWindow {
     }
 
 
-
     Rectangle{
         anchors.fill: parent
-        color: "#505050"
+        gradient: Gradient {
+            GradientStop { position: 0.0; color: "#606060" }
+            GradientStop { position: 1.0; color: "#404040" }
+        }
 
-        Row{
+        RowLayout{
             anchors.fill: parent
-            anchors.margins: 10
-            spacing: 20
+            spacing: 15
+            anchors.margins: 15
 
             MainMenu{}
 
-            ThermostatDial{}
+            ColumnLayout{
+                Rectangle{Layout.fillHeight: true}
+                spacing: 15
 
+                MembersWidget{}
+
+                ThermostatDial{}
+
+
+            }
+
+
+
+            Rectangle{Layout.fillWidth: true}
 
         }
     }
