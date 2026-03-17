@@ -27,6 +27,10 @@ qt_add_qml_module(appguide
         resources/components/MaterialIcon.qml
         resources/components/ThermostatDial.qml
         resources/components/MembersWidget.qml
+        resources/components/TopMenu.qml
+        resources/components/WeatherWidget.qml
+        resources/components/LockWidget.qml
+        resources/components/EnergyGraphWidget.qml
 
         RESOURCES
         resources/icons/MaterialSymbolsSharp.ttf
@@ -34,8 +38,8 @@ qt_add_qml_module(appguide
         resources/images/members/father.webp
         resources/images/members/son.webp
         resources/images/members/mom.webp
-        QML_FILES resources/components/TopMenu.qml
-        QML_FILES resources/components/WeatherWidget.qml
+        resources/images/lock.png
+
 )
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.

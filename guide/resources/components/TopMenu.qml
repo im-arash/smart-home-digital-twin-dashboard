@@ -1,5 +1,6 @@
 import QtQuick
 import QtQuick.Layouts
+import Qt5Compat.GraphicalEffects
 
 RowLayout {
     Layout.leftMargin: 20
@@ -20,10 +21,56 @@ RowLayout {
     }
 
     // 3. Right side: Profile/Icon Circle
-    Rectangle {
-        Layout.preferredWidth: 40
-        Layout.preferredHeight: 40
-        radius: 40
-        color: "white"
+    RowLayout{
+        spacing: Style.space
+        Rectangle {
+            color: "#505050"
+            Layout.preferredWidth: Style.mainIconSize
+            Layout.preferredHeight: Style.mainIconSize
+            radius: 40
+            MaterialIcon {
+                anchors.centerIn: parent
+                icon: "apps"
+                size: 20
+            }
+        }
+
+        Rectangle {
+            color: "#505050"
+            Layout.preferredWidth: Style.mainIconSize
+            Layout.preferredHeight: Style.mainIconSize
+            radius: 40
+            MaterialIcon {
+                anchors.centerIn: parent
+                icon: "notifications"
+                size: 20
+            }
+        }
+
+
+        Item {
+            Layout.preferredWidth: Style.mainIconSize
+            Layout.preferredHeight: Style.mainIconSize
+
+            Image {
+                id: avatarImg
+                anchors.fill: parent
+                source: "../images/members/father.webp"
+                fillMode: Image.PreserveAspectCrop
+                visible: false // Hidden because OpacityMask handles the rendering
+            }
+
+            OpacityMask {
+                anchors.fill: avatarImg
+                source: avatarImg
+                maskSource: Rectangle {
+                    width: avatarImg.width
+                    height: avatarImg.height
+                    radius: width / 2
+                }
+            }
+        }
     }
+
+
 }
