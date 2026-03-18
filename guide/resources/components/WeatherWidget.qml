@@ -6,7 +6,8 @@ import QtQuick.Layouts
 Item {
     id: weatherWidgetRoot
     Layout.fillWidth: true
-    Layout.fillHeight: true
+    // Layout.fillHeight: true
+    Layout.preferredHeight: 180
     // (Ensure you have an explicit width/height here or in the parent if needed in Designer)
 
     // 1. The Background Layer

@@ -11,7 +11,8 @@ Rectangle {
 
     Layout.fillWidth: true
     Layout.preferredWidth: 1
-    Layout.fillHeight: true
+    // Layout.fillHeight: true
+    Layout.preferredHeight: 190
     radius: 20
     gradient: Gradient {
         GradientStop { position: 0.0; color: "#808080" }
@@ -121,7 +122,7 @@ Rectangle {
                     Layout.preferredWidth: 34
                     Layout.preferredHeight: 34
                     radius: 40
-                    color: "transparent" // Fixed invalid 9-digit hex color
+                    color: "#808080"
                     MaterialIcon {
                         anchors.centerIn: parent
                         icon: "lock_open_right"
