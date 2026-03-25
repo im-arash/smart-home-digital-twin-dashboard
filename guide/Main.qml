@@ -4,6 +4,7 @@ import QtQuick.Controls
 import QtQuick.Layouts
 import QtQuick.Controls.Material
 
+
 ApplicationWindow {
     id: root
     width: 1280
@@ -90,15 +91,11 @@ ApplicationWindow {
                         Layout.fillWidth: true
                         Layout.fillHeight: true
                         spacing: Style.space
-                        Rectangle {
-                            Layout.fillWidth: true
-                            Layout.fillHeight: true
-                            radius: 20
-                            gradient: Gradient {
-                                GradientStop { position: 0.0; color: "#808080" }
-                                GradientStop { position: 1.0; color: "#505050" }
-                            }
-                        }
+
+                        //--CCTV--
+                        CCTVWidget{}
+
+                        //-- --
                         Rectangle {
                             Layout.fillWidth: true
                             Layout.preferredHeight: 180

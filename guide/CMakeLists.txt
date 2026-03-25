@@ -39,6 +39,7 @@ qt_add_qml_module(appguide
         resources/images/members/son.webp
         resources/images/members/mom.webp
         resources/images/lock.png
+        QML_FILES resources/components/CCTVWidget.qml
 
 )
 
