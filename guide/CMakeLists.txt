@@ -5,7 +5,7 @@ project(guide VERSION 0.1 LANGUAGES CXX)
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-find_package(Qt6 REQUIRED COMPONENTS Quick Sql)
+find_package(Qt6 REQUIRED COMPONENTS Quick Sql WebSockets)
 
 qt_standard_project_setup(REQUIRES 6.8)
 
@@ -31,6 +31,7 @@ qt_add_qml_module(appguide
         resources/components/WeatherWidget.qml
         resources/components/LockWidget.qml
         resources/components/EnergyGraphWidget.qml
+        resources/components/CCTVWidget.qml
 
         RESOURCES
         resources/icons/MaterialSymbolsSharp.ttf
@@ -39,7 +40,10 @@ qt_add_qml_module(appguide
         resources/images/members/son.webp
         resources/images/members/mom.webp
         resources/images/lock.png
-        QML_FILES resources/components/CCTVWidget.qml
+        SOURCES
+        SOURCES
+        SOURCES devicecontroller.h devicecontroller.cpp
+
 
 )
 
@@ -55,7 +59,7 @@ set_target_properties(appguide PROPERTIES
 )
 
 target_link_libraries(appguide
-    PRIVATE Qt6::Quick Qt6::Sql
+    PRIVATE Qt6::Quick Qt6::Sql Qt6::WebSockets
 )
 
 include(GNUInstallDirs)

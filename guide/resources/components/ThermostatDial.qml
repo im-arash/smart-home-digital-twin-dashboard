@@ -3,12 +3,21 @@ import QtQuick.Controls
 import QtQuick.Layouts
 import QtQuick.Controls.Material
 import QtQuick.Shapes
+import guide
 
 Item {
     Layout.preferredWidth: 300
     Layout.fillHeight: true
 
+    property string activeMode: "off"
+
     component CircularIconButton : Rectangle {
+
+
+        property bool isChecked: false
+        property color checkedColor: "transparent"
+
+
         property string iconName
         property int size: 50
         signal clicked()
@@ -16,7 +25,8 @@ Item {
         width: size
         height: size
         radius: size / 2
-        color: tapHandler.pressed ? "#404040" : (hoverHandler.hovered ? "#808080" : "#606060")
+        // color: tapHandler.pressed ? "#404040" : (hoverHandler.hovered ? "#808080" : "#606060")
+        color: tapHandler.pressed ? "#404040" : (isChecked ? checkedColor : (hoverHandler.hovered ? "#808080" : "#606060"))
 
         MaterialIcon {
             anchors.centerIn: parent
@@ -56,7 +66,19 @@ Item {
 
                 Item { Layout.fillWidth: true } // spacer
 
-                Switch {}
+                Switch {
+                    id: thSwitch
+                    onToggled: {
+                        // If the user manually clicks the switch OFF, turn off button colors
+                        if (!checked) {
+                            activeMode = "off"
+                        } else if (activeMode === "off") {
+                            activeMode = "heat" // Default to heat if they just flip the switch on
+                        }
+
+                        deviceController.setThermostatState("LR-TH-01", activeMode)
+                    }
+                }
             }
 
             // -- Dial Control --
@@ -74,7 +96,6 @@ Item {
                     Layout.preferredWidth: 250
                     Layout.preferredHeight: 250
 
-                    // Base full circle border (Gray)
                     Rectangle {
                         anchors.fill: parent
                         radius: width / 2
@@ -84,7 +105,6 @@ Item {
                         antialiasing: true
                     }
 
-                    // Active filled border (Blue) based on value
                     Shape {
                         anchors.fill: parent
                         antialiasing: true
@@ -108,7 +128,6 @@ Item {
                         }
                     }
 
-                    // Repeater for the tick marks
                     Repeater {
                         id: tickRepeater
                         model: (control.to - control.from) / control.stepSize + 1
@@ -135,7 +154,6 @@ Item {
                     }
                 }
 
-                // Center Text Display
                 Item {
                     anchors.centerIn: parent
 
@@ -158,7 +176,6 @@ Item {
                     }
                 }
 
-                // Draggable Handle
                 handle: Rectangle {
                     id: handleItem
                     x: control.background.x + control.background.width / 2 - width / 2
@@ -166,7 +183,7 @@ Item {
                     width: 30
                     height: 30
                     color: control.pressed ? "dodgerblue" : "LightBlue"
-                    radius: 15 // width / 2
+                    radius: 15
                     antialiasing: true
                     opacity: control.enabled ? 1 : 0.3
 
@@ -179,12 +196,11 @@ Item {
                         }
                     ]
 
-                    // Inner dot
                     Rectangle {
                         anchors.centerIn: parent
                         width: 15
                         height: 15
-                        radius: 7.5 // width / 2
+                        radius: 7.5
                         color: "#909090"
                     }
                 }
@@ -197,7 +213,7 @@ Item {
 
                 CircularIconButton {
                     size: 36
-                    iconName: "check_indeterminate_small" // Acts as minus
+                    iconName: "check_indeterminate_small"
                     onClicked: control.decrease()
                 }
 
@@ -225,10 +241,45 @@ Item {
 
                     Item { Layout.fillWidth: true } // left spacer
 
-                    CircularIconButton { iconName: "mode_fan"; onClicked: console.log("Fan mode") }
-                    CircularIconButton { iconName: "local_fire_department"; onClicked: console.log("Heat mode") }
-                    CircularIconButton { iconName: "severe_cold"; onClicked: console.log("Cool mode") }
-                    CircularIconButton { iconName: "nest_eco_leaf"; onClicked: console.log("Eco mode") }
+                    CircularIconButton {
+                        iconName: "mode_fan";
+                        onClicked: console.log("Fan mode")
+                    }
+
+                    CircularIconButton {
+                        iconName: "local_fire_department"
+
+                        // --- COLOR LOGIC ---
+                        isChecked: activeMode === "heat"
+                        checkedColor: "red"
+                        // -------------------
+
+                        onClicked: {
+                            activeMode = "heat" // Lights up this button, turns off the other one
+                            thSwitch.checked = true   // Forces the switch ON
+                            deviceController.setThermostatState("LR-TH-01", "heat")
+                        }
+                    }
+
+                    CircularIconButton {
+                        iconName: "severe_cold"
+
+                        // --- COLOR LOGIC ---
+                        isChecked: activeMode === "cool"
+                        checkedColor: "dodgerblue"
+                        // -------------------
+
+                        onClicked: {
+                            activeMode = "cool" // Lights up this button, turns off the other one
+                            thSwitch.checked = true   // Forces the switch ON
+                            deviceController.setThermostatState("LR-TH-01", "cool") // Sends network command
+                        }
+                    }
+
+                    CircularIconButton {
+                        iconName: "nest_eco_leaf";
+                        onClicked: console.log("Eco mode")
+                    }
 
                     Item { Layout.fillWidth: true } // right spacer
                 }

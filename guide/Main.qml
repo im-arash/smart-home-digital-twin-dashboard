@@ -15,6 +15,8 @@ ApplicationWindow {
     Material.theme: Material.Dark
     Material.accent: Material.LightBlue
 
+    DeviceController{id: deviceController}
+
     FontLoader {
         id: materialIcons
         source: "resources/icons/MaterialSymbolsSharp.ttf"
@@ -93,7 +95,9 @@ ApplicationWindow {
                         spacing: Style.space
 
                         //--CCTV--
-                        CCTVWidget{}
+                        CCTVWidget{
+
+                        }
 
                         //-- --
                         Rectangle {

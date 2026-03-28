@@ -2,8 +2,6 @@ import QtQuick
 import QtQuick.Controls
 import QtQuick.Layouts
 import QtMultimedia
-// Import GraphicalEffects for the OpacityMask
-// If you are using Qt 5, change this to: import QtGraphicalEffects 1.15
 import Qt5Compat.GraphicalEffects
 
 Item {
