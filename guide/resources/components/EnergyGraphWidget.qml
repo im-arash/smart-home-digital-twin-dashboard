@@ -29,7 +29,7 @@ Item {
         Text {
             text: "Energy(kwh)"
             color: "white"
-            font.pixelSize: 20
+            font.pixelSize: 16
             font.bold: true
             Layout.margins: 20
             Layout.alignment: Qt.AlignTop | Qt.AlignLeft

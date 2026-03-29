@@ -16,6 +16,7 @@ Item {
 
         property bool isChecked: false
         property color checkedColor: "transparent"
+        property bool fanMode: false
 
 
         property string iconName
@@ -25,7 +26,6 @@ Item {
         width: size
         height: size
         radius: size / 2
-        // color: tapHandler.pressed ? "#404040" : (hoverHandler.hovered ? "#808080" : "#606060")
         color: tapHandler.pressed ? "#404040" : (isChecked ? checkedColor : (hoverHandler.hovered ? "#808080" : "#606060"))
 
         MaterialIcon {
@@ -232,6 +232,7 @@ Item {
                 Text {
                     text: "Actions"
                     color: "white"
+                    font.pixelSize: 14
                     Layout.leftMargin: 20
                 }
 
@@ -246,6 +247,7 @@ Item {
                         onClicked: console.log("Fan mode")
                     }
 
+                    // --- Heat Mode ---
                     CircularIconButton {
                         iconName: "local_fire_department"
 
@@ -261,6 +263,7 @@ Item {
                         }
                     }
 
+                    // --- Cool Mode ---
                     CircularIconButton {
                         iconName: "severe_cold"
 
@@ -270,15 +273,26 @@ Item {
                         // -------------------
 
                         onClicked: {
-                            activeMode = "cool" // Lights up this button, turns off the other one
-                            thSwitch.checked = true   // Forces the switch ON
-                            deviceController.setThermostatState("LR-TH-01", "cool") // Sends network command
+                            activeMode = "cool"
+                            thSwitch.checked = true
+                            deviceController.setThermostatState("LR-TH-01", "cool")
                         }
                     }
 
+                    // --- Eco Mode ---
                     CircularIconButton {
                         iconName: "nest_eco_leaf";
-                        onClicked: console.log("Eco mode")
+
+                        // --- COLOR LOGIC ---
+                        isChecked: activeMode === "eco"
+                        checkedColor: "yellowgreen"
+                        // -------------------
+
+                        onClicked: {
+                            activeMode = "eco"
+                            thSwitch.checked = true
+                            deviceController.setThermostatState("LR-TH-01", "eco")
+                        }
                     }
 
                     Item { Layout.fillWidth: true } // right spacer

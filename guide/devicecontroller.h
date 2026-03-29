@@ -23,7 +23,7 @@ public:
     }
 
     Q_INVOKABLE void setThermostatState(const QString &deviceId, const QString &state) {
-        if (state != "heat" && state != "cool" && state != "off") {
+        if (state != "heat" && state != "cool" && state != "eco" && state != "off") {
             qWarning() << "Invalid thermostat state:" << state;
             return;
         }
@@ -32,6 +32,15 @@ public:
         json["deviceId"] = deviceId;
         json["action"] = "setState";
         json["state"] = state; // "heat", "cool", or "off"
+
+        QJsonDocument doc(json);
+        m_client.sendTextMessage(QString::fromUtf8(doc.toJson(QJsonDocument::Compact)));
+    }
+
+    Q_INVOKABLE void switchInteriorLight(const QString &deviceId){
+        QJsonObject json;
+        json["deviceId"] = deviceId;
+        json["action"] = "toggle";
 
         QJsonDocument doc(json);
         m_client.sendTextMessage(QString::fromUtf8(doc.toJson(QJsonDocument::Compact)));

@@ -43,6 +43,7 @@ qt_add_qml_module(appguide
         SOURCES
         SOURCES
         SOURCES devicecontroller.h devicecontroller.cpp
+        QML_FILES resources/components/DeviceCTRLWidget.qml
 
 
 )
