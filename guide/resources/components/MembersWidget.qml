@@ -50,6 +50,7 @@ Item {
                     color: "white"
                     font.bold: true
                     font.pixelSize: 16
+                    Layout.bottomMargin: 10
                 }
 
                 // Invisible spacer

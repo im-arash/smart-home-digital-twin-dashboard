@@ -9,7 +9,7 @@ ApplicationWindow {
     width: 1280
     height: 720
     visible: true
-    title: qsTr("")
+    title: "Smart Home"
 
     Material.theme: Material.Dark
     Material.accent: Material.LightBlue

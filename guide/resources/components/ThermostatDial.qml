@@ -54,7 +54,10 @@ Item {
 
             // -- Header --
             RowLayout {
-                Layout.margins: 20
+                // Layout.margins: 20
+                Layout.leftMargin: 20
+                Layout.topMargin: 20
+                Layout.rightMargin: 10
                 Layout.fillWidth: true
 
                 Text {
@@ -62,6 +65,7 @@ Item {
                     color: "white"
                     font.pixelSize: 16
                     font.bold: true
+                    Layout.bottomMargin: 10
                 }
 
                 Item { Layout.fillWidth: true } // spacer

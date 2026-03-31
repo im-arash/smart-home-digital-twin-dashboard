@@ -53,7 +53,22 @@ Item {
             }
 
             MenuButton {
-                iconName: "apps"
+                iconName: "bar_chart"
+                onClicked: console.log("clicked apps")
+            }
+
+            MenuButton {
+                iconName: "speed_camera"
+                onClicked: console.log("clicked apps")
+            }
+
+            MenuButton {
+                iconName: "security"
+                onClicked: console.log("clicked apps")
+            }
+
+            MenuButton {
+                iconName: "settings"
                 onClicked: console.log("clicked apps")
             }
 
