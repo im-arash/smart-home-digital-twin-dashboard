@@ -23,8 +23,8 @@ public:
     }
 
     Q_INVOKABLE void setThermostatState(const QString &deviceId, const QString &state) {
-        if (state != "heat" && state != "cool" && state != "eco" && state != "off") {
-            qWarning() << "Invalid thermostat state:" << state;
+        if (state != "auto" && state != "heat" && state != "cool" && state != "eco" && state != "off") {
+            qWarning() << "Invalid thermostat state:" << state << "!!";
             return;
         }
 
@@ -45,6 +45,20 @@ public:
         QJsonDocument doc(json);
         m_client.sendTextMessage(QString::fromUtf8(doc.toJson(QJsonDocument::Compact)));
     }
+
+    Q_INVOKABLE void setTemperature(const QString &deviceId, double temperature) {
+        QJsonObject json;
+        json["action"] = "setTemperature";
+        json["deviceId"] = deviceId;
+        json["temperature"] = temperature;
+
+        QJsonDocument doc(json);
+
+        // Send it over the websocket.
+        // (Note: Replace 'm_webSocket' with whatever you named your websocket variable!)
+        m_client.sendTextMessage(doc.toJson(QJsonDocument::Compact));
+    }
+
 
 private:
     QWebSocket m_client;

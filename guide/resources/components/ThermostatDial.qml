@@ -3,7 +3,9 @@ import QtQuick.Controls
 import QtQuick.Layouts
 import QtQuick.Controls.Material
 import QtQuick.Shapes
-import guide
+
+// Ensure guide is imported if you are still using it
+// import guide
 
 Item {
     Layout.preferredWidth: 300
@@ -12,12 +14,9 @@ Item {
     property string activeMode: "off"
 
     component CircularIconButton : Rectangle {
-
-
         property bool isChecked: false
         property color checkedColor: "transparent"
         property bool fanMode: false
-
 
         property string iconName
         property int size: 50
@@ -54,12 +53,12 @@ Item {
 
             // -- Header --
             RowLayout {
-                // Layout.margins: 20
                 Layout.leftMargin: 20
                 Layout.topMargin: 20
                 Layout.rightMargin: 10
                 Layout.fillWidth: true
 
+                // NEW: Added Room Temperature to the Header!
                 Text {
                     text: "Thermostat"
                     color: "white"
@@ -77,7 +76,7 @@ Item {
                         if (!checked) {
                             activeMode = "off"
                         } else if (activeMode === "off") {
-                            activeMode = "heat" // Default to heat if they just flip the switch on
+                            activeMode = "auto" // NEW: Default to auto if they just flip the switch on!
                         }
 
                         deviceController.setThermostatState("LR-TH-01", activeMode)
@@ -95,6 +94,10 @@ Item {
                 to: 35
                 stepSize: 1
                 value: 20
+
+                onValueChanged: {
+                    deviceController.setTemperature("LR-TH-01", control.value)
+                }
 
                 background: Item {
                     Layout.preferredWidth: 250
@@ -246,23 +249,32 @@ Item {
 
                     Item { Layout.fillWidth: true } // left spacer
 
+                    // --- NEW: Auto Mode (Replaced Fan) ---
                     CircularIconButton {
-                        iconName: "mode_fan";
-                        onClicked: console.log("Fan mode")
+                        iconName: "autorenew"; // A nice icon for "Auto Cycling"
+
+                        // --- COLOR LOGIC ---
+                        isChecked: activeMode === "auto"
+                        checkedColor: "darkorange" // Distinct color for Auto mode
+                        // -------------------
+
+                        onClicked: {
+                            activeMode = "auto"
+                            thSwitch.checked = true
+                            deviceController.setThermostatState("LR-TH-01", "auto")
+                        }
                     }
 
                     // --- Heat Mode ---
                     CircularIconButton {
                         iconName: "local_fire_department"
 
-                        // --- COLOR LOGIC ---
                         isChecked: activeMode === "heat"
                         checkedColor: "red"
-                        // -------------------
 
                         onClicked: {
-                            activeMode = "heat" // Lights up this button, turns off the other one
-                            thSwitch.checked = true   // Forces the switch ON
+                            activeMode = "heat"
+                            thSwitch.checked = true
                             deviceController.setThermostatState("LR-TH-01", "heat")
                         }
                     }
@@ -271,10 +283,8 @@ Item {
                     CircularIconButton {
                         iconName: "severe_cold"
 
-                        // --- COLOR LOGIC ---
                         isChecked: activeMode === "cool"
                         checkedColor: "dodgerblue"
-                        // -------------------
 
                         onClicked: {
                             activeMode = "cool"
@@ -287,10 +297,8 @@ Item {
                     CircularIconButton {
                         iconName: "nest_eco_leaf";
 
-                        // --- COLOR LOGIC ---
                         isChecked: activeMode === "eco"
                         checkedColor: "yellowgreen"
-                        // -------------------
 
                         onClicked: {
                             activeMode = "eco"
