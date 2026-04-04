@@ -1,32 +1,59 @@
 import QtQuick
+import QtQuick.Layouts
 import QtQuick.Effects
 import QtGraphs
-import QtQuick.Layouts
+import guide
 
 Item {
     id: weatherWidgetRoot
     Layout.fillWidth: true
-    // Layout.fillHeight: true
     Layout.preferredHeight: 180
-    // (Ensure you have an explicit width/height here or in the parent if needed in Designer)
+
+    WeatherModel {id: weatherModel}
 
     // 1. The Background Layer
     Rectangle {
         anchors.fill: parent
         radius: 20
-        antialiasing: true // Smooths the background's own corners
+        antialiasing: true
         gradient: Gradient {
             GradientStop { position: 0.0; color: "#808080" }
             GradientStop { position: 1.0; color: "#707070" }
         }
         Text {
-            id: name
-            text: "23°"
+            text: weatherModel.currentTemperature + "°"
             x: 20
-            y: 20
+            y: 10
             color: "white"
-            font.pixelSize: 50
+            font.pixelSize: 40
             font.bold: true
+        }
+
+        Text {
+            text: " / " + weatherModel.currentLowTemperature + "°"
+            x: 80
+            y: 30
+            color: "#dddddd"
+            font.pixelSize: 20
+        }
+
+        Text{
+            x: 30
+            y: 60
+            MaterialIcon {
+                anchors.centerIn: parent
+                icon: "wb_sunny"
+                size: 12
+                iconColor: "#dddddd"
+            }
+        }
+
+        Text {
+            text: weatherModel.currentDay
+            x: 40
+            y: 60
+            color: "#dddddd"
+            font.pixelSize: 12
         }
     }
 
@@ -108,4 +135,43 @@ Item {
             }
         }
     }
+
+    ColumnLayout {
+        anchors.fill: parent
+
+        RowLayout {
+            Layout.alignment: Qt.AlignBottom
+            Layout.fillWidth: true
+            Layout.margins: 20
+            spacing: 42
+
+            Repeater {
+                model: weatherModel
+
+                delegate: Column {
+                    // spacing: 1
+
+                    Text {
+                        text: highTemperature + "°"
+                        color: "white"
+                        font.bold: true
+                        font.pixelSize: 14
+                    }
+
+                    Text {
+                        text: lowTemperature + "°"
+                        color: "#dddddd"
+                        font.pixelSize: 12
+                    }
+
+                    Text {
+                        text: Qt.formatDate(date, "ddd")
+                        color: "white"
+                        font.pixelSize: 12
+                    }
+                }
+            }
+        }
+    }
+
 }

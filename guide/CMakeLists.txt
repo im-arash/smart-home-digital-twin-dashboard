@@ -44,6 +44,7 @@ qt_add_qml_module(appguide
         SOURCES
         SOURCES devicecontroller.h devicecontroller.cpp
         QML_FILES resources/components/DeviceCTRLWidget.qml
+        SOURCES weathermodel.h weathermodel.cpp
 
 
 )

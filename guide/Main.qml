@@ -76,9 +76,11 @@ ApplicationWindow {
                             spacing: Style.space
                             LockWidget {
                                 lockName: "Front Door"
+                                deviceId: "front_door"
                             }
                             LockWidget {
-                                lockName: "Back Door"
+                                lockName: "Garage Door"
+                                deviceId: "garage_door"
 
                             }
                         }

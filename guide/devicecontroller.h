@@ -59,6 +59,16 @@ public:
         m_client.sendTextMessage(doc.toJson(QJsonDocument::Compact));
     }
 
+    Q_INVOKABLE void setDeviceState(const QString &deviceId, const QString &state) {
+        QJsonObject json;
+        json["deviceId"] = deviceId;
+        json["action"] = "setLock"; // We use a specific action for locks
+        json["state"] = state;      // "locked" or "unlocked"
+
+        QJsonDocument doc(json);
+        m_client.sendTextMessage(QString::fromUtf8(doc.toJson(QJsonDocument::Compact)));
+    }
+
 
 private:
     QWebSocket m_client;
