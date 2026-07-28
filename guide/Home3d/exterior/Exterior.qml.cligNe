@@ -1,0 +1,58 @@
+import QtQuick
+import QtQuick3D
+
+Node {
+    id: node
+
+
+
+    // Nodes:
+    Node {
+        id: root
+        objectName: "ROOT"
+
+        ExteriorStatic{}
+
+        Node {
+            id: nodes_49_
+            objectName: "nodes[49]"
+            position: Qt.vector3d(-62.9535, 1.6574, 55.8396)
+            rotation: Qt.quaternion(1, 2.18557e-08, 0, 0)
+            Model {
+                id: ae34_008_Garage_Door
+                objectName: "AE34_008_Garage_Door"
+                scale: Qt.vector3d(0.01, 0.01, 0.01)
+                source: "meshes/ae34_008_Garage_Door_mesh.mesh"
+                materials: [
+                    adskMatAE34_008_Garage_Door_material
+                ]
+            }
+        }
+        Node {
+            id: nodes_51_
+            objectName: "nodes[51]"
+            position: Qt.vector3d(-49.6292, 1.58711, 55.7834)
+            rotation: Qt.quaternion(0.707107, 1.54543e-08, -0.707107, 1.54543e-08)
+            Model {
+                id: ae34_008_House_Door
+                objectName: "AE34_008_House_Door"
+                scale: Qt.vector3d(0.01, 0.01, 0.01)
+                source: "meshes/ae34_008_House_Door_mesh.mesh"
+                materials: [
+                    adskMatAE34_008_House_Door_material
+                ]
+            }
+        }
+    }
+
+
+    //--- Materials ---
+
+
+}
+
+/*##^##
+Designer {
+    D{i:0;cameraSpeed3d:25;cameraSpeed3dMultiplier:1}
+}
+##^##*/

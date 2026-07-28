@@ -1,0 +1,20 @@
+import QmlProject
+
+Project {
+    // CHANGE THIS LINE: 
+    mainFile: "Main3dScene.qml" 
+
+    qt6Project: true
+
+    QmlFiles {
+        directory: "."
+    }
+
+    importPaths: [ ".", ".." ] 
+
+    Environment {
+        QT_QUICK_CONTROLS_CONF: "qtquickcontrols2.conf"
+        QT_QUICK_CONTROLS_STYLE: "Material"
+        QSG_RHI_BACKEND: "d3d11"
+    }
+}

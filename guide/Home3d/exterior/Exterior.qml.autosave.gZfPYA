@@ -1,0 +1,1306 @@
+import QtQuick
+import QtQuick3D
+
+Node {
+    id: node
+
+    // Resources
+    property url textureData: "maps/textureData.png"
+    property url textureData270: "maps/textureData270.png"
+    property url textureData60: "maps/textureData60.png"
+    property url textureData7: "maps/textureData7.jpg"
+    property url textureData134: "maps/textureData134.png"
+    property url textureData9: "maps/textureData9.jpg"
+    property url textureData136: "maps/textureData136.png"
+    property url textureData104: "maps/textureData104.jpg"
+    property url textureData142: "maps/textureData142.png"
+    property url textureData15: "maps/textureData15.png"
+    property url textureData144: "maps/textureData144.png"
+    property url textureData17: "maps/textureData17.png"
+    property url textureData153: "maps/textureData153.jpg"
+    property url textureData106: "maps/textureData106.jpg"
+    property url textureData159: "maps/textureData159.jpg"
+    property url textureData122: "maps/textureData122.jpg"
+    property url textureData173: "maps/textureData173.jpg"
+    property url textureData124: "maps/textureData124.jpg"
+    property url textureData127: "maps/textureData127.jpg"
+    property url textureData185: "maps/textureData185.png"
+    property url textureData62: "maps/textureData62.png"
+    property url textureData187: "maps/textureData187.png"
+    property url textureData38: "maps/textureData38.png"
+    property url textureData193: "maps/textureData193.png"
+    property url textureData115: "maps/textureData115.png"
+    property url textureData195: "maps/textureData195.png"
+    property url textureData44: "maps/textureData44.png"
+    property url textureData201: "maps/textureData201.png"
+    property url textureData46: "maps/textureData46.png"
+    property url textureData203: "maps/textureData203.png"
+    property url textureData232: "maps/textureData232.png"
+    property url textureData234: "maps/textureData234.png"
+    property url textureData52: "maps/textureData52.png"
+    property url textureData268: "maps/textureData268.png"
+    property url textureData54: "maps/textureData54.png"
+    property url textureData96: "maps/textureData96.jpg"
+    property url textureData117: "maps/textureData117.png"
+
+    // Nodes:
+    Node {
+        id: root
+        objectName: "ROOT"
+        Node {
+            id: nodes_1_
+            objectName: "nodes[1]"
+            position: Qt.vector3d(-41.9989, 7.79627, 45.7389)
+            rotation: Qt.quaternion(-5.33851e-08, 5.33851e-08, 0.707107, 0.707107)
+            Model {
+                id: ae34_008_glass_03
+                objectName: "AE34_008_glass_03"
+                scale: Qt.vector3d(0.01, 0.01, 0.01)
+                source: "meshes/ae34_008_glass_03_mesh.mesh"
+                materials: [
+                    ae34_008_Building_fance_02_material
+                ]
+            }
+        }
+        Node {
+            id: nodes_3_
+            objectName: "nodes[3]"
+            position: Qt.vector3d(-57.8323, 4.19444, 53.6344)
+            rotation: Qt.quaternion(0.707107, -0.707107, 0, 0)
+            Model {
+                id: ae34__008_Building_Dark
+                objectName: "AE34_008_Building_Dark"
+                scale: Qt.vector3d(0.01, 0.01, 0.01)
+                source: "meshes/ae34__008_Building_Dark_mesh.mesh"
+
+                materials: [
+                    ae34_008_Building_Dark_material
+                ]
+            }
+        }
+        Node {
+            id: nodes_5_
+            objectName: "nodes[5]"
+            position: Qt.vector3d(-58.6276, 4.27916, 53.9369)
+            rotation: Qt.quaternion(0.707107, -0.707107, 0, 0)
+            Model {
+                id: ae34_008_glass_01
+                objectName: "AE34_008_glass_01"
+                scale: Qt.vector3d(0.01, 0.01, 0.01)
+                source: "meshes/ae34_008_glass_01_mesh.mesh"
+                materials: [
+                    ae34_008_Building_fance_02_material
+                ]
+            }
+        }
+        Node {
+            id: nodes_7_
+            objectName: "nodes[7]"
+            position: Qt.vector3d(-43.756, 6.50794, 59.2487)
+            rotation: Qt.quaternion(1, 2.18557e-08, 0, 0)
+            Model {
+                id: ae34_008_glass_02
+                objectName: "AE34_008_glass_02"
+                scale: Qt.vector3d(0.01, 0.01, 0.01)
+                source: "meshes/ae34_008_glass_02_mesh.mesh"
+                materials: [
+                    ae34_008_Building_fance_02_material
+                ]
+            }
+        }
+        Node {
+            id: nodes_9_
+            objectName: "nodes[9]"
+            position: Qt.vector3d(-68.0444, 6.18754, 58.011)
+            rotation: Qt.quaternion(0.707107, 1.54543e-08, 0.707107, -1.54543e-08)
+            Model {
+                id: ae34_008_Building_fance_79
+                objectName: "AE34_008_Building_fance_79"
+                scale: Qt.vector3d(0.01, 0.01, 0.01)
+                source: "meshes/ae34_008_Building_fance_79_mesh.mesh"
+                materials: [
+                    ae34_008_Building_fance_01_material
+                ]
+            }
+        }
+        Node {
+            id: nodes_11_
+            objectName: "nodes[11]"
+            position: Qt.vector3d(-68.4984, 10.1864, 57.9857)
+            rotation: Qt.quaternion(-4.37114e-08, -9.55343e-16, 1, -2.18557e-08)
+            Model {
+                id: ae34_008_Building_fance_74
+                objectName: "AE34_008_Building_fance_74"
+                scale: Qt.vector3d(0.01, 0.01, 0.01)
+                source: "meshes/ae34_008_Building_fance_74_mesh.mesh"
+                materials: [
+                    ae34_008_Building_fance_01_material
+                ]
+            }
+        }
+        Node {
+            id: nodes_13_
+            objectName: "nodes[13]"
+            position: Qt.vector3d(-46.4771, 0, 59.2486)
+            rotation: Qt.quaternion(0.707107, -0.707107, 0, 0)
+            Model {
+                id: ae34_008_Building_Dark_Down
+                objectName: "AE34_008_Building_Dark_Down"
+                scale: Qt.vector3d(0.01, 0.01, 0.01)
+                source: "meshes/ae34_008_Building_Dark_Down_mesh.mesh"
+                materials: [
+                    adskMatAE34_008_Building_Dark_Down_material
+                ]
+            }
+        }
+        Node {
+            id: nodes_15_
+            objectName: "nodes[15]"
+            position: Qt.vector3d(-46.7942, 0.183325, 60.1129)
+            rotation: Qt.quaternion(0.707107, -0.707107, 0, 0)
+            Model {
+                id: ae34_008_flower_pot
+                objectName: "AE34_008_flower_pot"
+                scale: Qt.vector3d(0.01, 0.01, 0.01)
+                source: "meshes/ae34_008_flower_pot_mesh.mesh"
+                materials: [
+                    ae34_008_Concrete_C_material
+                ]
+            }
+        }
+        Node {
+            id: nodes_17_
+            objectName: "nodes[17]"
+            position: Qt.vector3d(-48.09, 0.227861, 56.6801)
+            rotation: Qt.quaternion(0.707107, -0.707107, 0, 0)
+            Model {
+                id: ae34_008_Stairs
+                objectName: "AE34_008_Stairs"
+                scale: Qt.vector3d(0.01, 0.01, 0.01)
+                source: "meshes/ae34_008_Stairs_mesh.mesh"
+                materials: [
+                    ae34_008_Concrete_B_material
+                ]
+            }
+        }
+        Node {
+            id: nodes_19_
+            objectName: "nodes[19]"
+            position: Qt.vector3d(-68.9872, 4.5392, 48.5394)
+            rotation: Qt.quaternion(0.707107, -0.707107, 0, 0)
+            Model {
+                id: ae34_008_back_stairs
+                objectName: "AE34_008_back_stairs"
+                scale: Qt.vector3d(0.01, 0.01, 0.01)
+                source: "meshes/ae34_008_back_stairs_mesh.mesh"
+                materials: [
+                    adskMatAE34_008_back_stairs_material
+                ]
+            }
+        }
+
+        Node {
+            id: nodes_39_
+            objectName: "nodes[39]"
+            position: Qt.vector3d(-57.6719, 0, 51.3275)
+            rotation: Qt.quaternion(-5.33851e-08, 5.33851e-08, 0.707107, 0.707107)
+            Model {
+                id: ae34_008_Ground_01
+                objectName: "AE34_008_Ground_01"
+                scale: Qt.vector3d(0.01, 0.01, 0.01)
+                source: "meshes/ae34_008_Ground_01_mesh.mesh"
+                materials: [
+                    ae34_008_Ground_material
+                ]
+            }
+        }
+        Node {
+            id: nodes_41_
+            objectName: "nodes[41]"
+            position: Qt.vector3d(-57.6719, -0.145491, 51.4054)
+            rotation: Qt.quaternion(-5.33851e-08, 5.33851e-08, 0.707107, 0.707107)
+            Model {
+                id: ae34_008_Ground_02
+                objectName: "AE34_008_Ground_02"
+                scale: Qt.vector3d(0.01, 0.01, 0.01)
+                source: "meshes/ae34_008_Ground_02_mesh.mesh"
+                materials: [
+                    ae34_008_Ground_material
+                ]
+            }
+        }
+
+        Node {
+            id: nodes_45_
+            objectName: "nodes[45]"
+            position: Qt.vector3d(-60.1644, -0.288824, 62.3271)
+            rotation: Qt.quaternion(0.707107, -0.707107, 0, 0)
+            Model {
+                id: ae34_008_Road
+                objectName: "AE34_008_Road"
+                scale: Qt.vector3d(0.01, 0.01, 0.01)
+                source: "meshes/ae34_008_Road_mesh.mesh"
+                materials: [
+                    adskMatAE34_008_Road_material
+                ]
+            }
+        }
+
+        
+        Node {
+            id: nodes_53_
+            objectName: "nodes[53]"
+            position: Qt.vector3d(-68.5978, 6.83301, 54.9373)
+            rotation: Qt.quaternion(2.18557e-08, 1, 0, 0)
+            Model {
+                id: ae34_008_glass_04
+                objectName: "AE34_008_glass_04"
+                scale: Qt.vector3d(0.01, 0.01, 0.01)
+                source: "meshes/ae34_008_glass_04_mesh.mesh"
+                materials: [
+                    ae34_008_Building_fance_02_material
+                ]
+            }
+        }
+        Node {
+            id: nodes_55_
+            objectName: "nodes[55]"
+            position: Qt.vector3d(-55.2235, 1.60284, 56.151)
+            rotation: Qt.quaternion(0.707107, -0.707107, 0, 0)
+            scale: Qt.vector3d(1.7353, 1.7353, 1.7353)
+            Model {
+                id: am_105_054_001
+                objectName: "AM_105_054_001"
+                scale: Qt.vector3d(0.01, 0.01, 0.01)
+                source: "meshes/am_105_054_001_mesh.mesh"
+                materials: [
+                    ae34_008_Fance_flowers_material
+                ]
+            }
+        }
+
+        Node {
+            id: nodes_59_
+            objectName: "nodes[59]"
+            position: Qt.vector3d(-55.4092, 0.689883, 56.268)
+            rotation: Qt.quaternion(0.707107, -0.707107, 0, 0)
+            scale: Qt.vector3d(1.7353, 1.7353, 1.7353)
+            Model {
+                id: am_105_054_003
+                objectName: "AM_105_054_003"
+                scale: Qt.vector3d(0.01, 0.01, 0.01)
+                source: "meshes/am_105_054_003_mesh.mesh"
+                materials: [
+                    fallback_Material_material107
+                ]
+            }
+        }
+
+        Node {
+            id: nodes_63_
+            objectName: "nodes[63]"
+            position: Qt.vector3d(-55.4092, 2.37689, 56.268)
+            rotation: Qt.quaternion(0.707107, -0.707107, 0, 0)
+            scale: Qt.vector3d(1.7353, 1.7353, 1.7353)
+            Model {
+                id: am_105_054_003166
+                objectName: "AM_105_054_003"
+                scale: Qt.vector3d(0.01, 0.01, 0.01)
+                source: "meshes/am_105_054_003_mesh.mesh"
+                materials: [
+                    fallback_Material_material107
+                ]
+            }
+        }
+        Node {
+            id: nodes_65_
+            objectName: "nodes[65]"
+            position: Qt.vector3d(-55.2235, 3.28984, 56.151)
+            rotation: Qt.quaternion(0.707107, -0.707107, 0, 0)
+            scale: Qt.vector3d(1.7353, 1.7353, 1.7353)
+            Model {
+                id: am_105_054_001168
+                objectName: "AM_105_054_001"
+                scale: Qt.vector3d(0.01, 0.01, 0.01)
+                source: "meshes/am_105_054_001_mesh.mesh"
+                materials: [
+                    ae34_008_Fance_flowers_material
+                ]
+            }
+        }
+
+        Node {
+            id: nodes_69_
+            objectName: "nodes[69]"
+            position: Qt.vector3d(-42.4559, 4.82851, 49.2937)
+            rotation: Qt.quaternion(0.5, -0.5, -0.5, -0.5)
+            Model {
+                id: ae34_008_Building_fance_73
+                objectName: "AE34_008_Building_fance_73"
+                scale: Qt.vector3d(0.01, 0.01, 0.01)
+                source: "meshes/ae34_008_Building_fance_73_mesh.mesh"
+                materials: [
+                    ae34_008_Building_fance_02_material
+                ]
+            }
+        }
+        Node {
+            id: nodes_71_
+            objectName: "nodes[71]"
+            position: Qt.vector3d(-46.6077, 4.82851, 49.2937)
+            rotation: Qt.quaternion(0.5, -0.5, -0.5, -0.5)
+            Model {
+                id: ae34_008_Building_fance_73179
+                objectName: "AE34_008_Building_fance_73"
+                scale: Qt.vector3d(0.01, 0.01, 0.01)
+                source: "meshes/ae34_008_Building_fance_73_mesh.mesh"
+                materials: [
+                    ae34_008_Building_fance_02_material
+                ]
+            }
+        }
+        Node {
+            id: nodes_73_
+            objectName: "nodes[73]"
+            position: Qt.vector3d(-68.1365, 6.64291, 55.9724)
+            rotation: Qt.quaternion(1, 2.18557e-08, 0, 0)
+            Model {
+                id: ae34_008_wood
+                objectName: "AE34_008_wood"
+                scale: Qt.vector3d(0.01, 0.01, 0.01)
+                source: "meshes/ae34_008_wood_mesh.mesh"
+                materials: [
+                    ae34_008_wood_A_material
+                ]
+            }
+        }
+        Node {
+            id: nodes_75_
+            objectName: "nodes[75]"
+            position: Qt.vector3d(-64.3835, 10.817, 55.7052)
+            rotation: Qt.quaternion(1, 2.18557e-08, 0, 0)
+            Model {
+                id: ae34_008_wood054
+                objectName: "AE34_008_wood054"
+                scale: Qt.vector3d(0.01, 0.01, 0.01)
+                source: "meshes/ae34_008_wood054_mesh.mesh"
+                materials: [
+                    ae34_008_wood_B_material
+                ]
+            }
+        }
+        Node {
+            id: nodes_77_
+            objectName: "nodes[77]"
+            position: Qt.vector3d(-66.144, 12.3755, 51.2441)
+            rotation: Qt.quaternion(0.707107, -0.707107, 0, 0)
+            Model {
+                id: ae34_008_roof
+                objectName: "AE34_008_roof"
+                scale: Qt.vector3d(0.01, 0.01, 0.01)
+                source: "meshes/ae34_008_roof_mesh.mesh"
+                materials: [
+                    adskMatAE34_008_roof_material
+                ]
+            }
+        }
+        Node {
+            id: nodes_79_
+            objectName: "nodes[79]"
+            position: Qt.vector3d(-46.6648, 11.0478, 55.1373)
+            rotation: Qt.quaternion(0.707107, -0.707107, 0, 0)
+            Model {
+                id: ae34_008_roof001
+                objectName: "AE34_008_roof001"
+                scale: Qt.vector3d(0.01, 0.01, 0.01)
+                source: "meshes/ae34_008_roof001_mesh.mesh"
+                materials: [
+                    adskMatAE34_008_roof_material
+                ]
+            }
+        }
+        Node {
+            id: nodes_81_
+            objectName: "nodes[81]"
+            position: Qt.vector3d(-47.2849, 4.81927, 55.1575)
+            rotation: Qt.quaternion(0.707107, -0.707107, 0, 0)
+            Model {
+                id: ae34_008_roof002
+                objectName: "AE34_008_roof002"
+                scale: Qt.vector3d(0.01, 0.01, 0.01)
+                source: "meshes/ae34_008_roof002_mesh.mesh"
+                materials: [
+                    adskMatAE34_008_roof_material
+                ]
+            }
+        }
+        Node {
+            id: nodes_83_
+            objectName: "nodes[83]"
+            position: Qt.vector3d(-61.1374, 4.81927, 52.6449)
+            rotation: Qt.quaternion(0.707107, -0.707107, 0, 0)
+            Model {
+                id: ae34_008_roof003
+                objectName: "AE34_008_roof003"
+                scale: Qt.vector3d(0.01, 0.01, 0.01)
+                source: "meshes/ae34_008_roof003_mesh.mesh"
+                materials: [
+                    adskMatAE34_008_roof_material
+                ]
+            }
+        }
+        Node {
+            id: nodes_85_
+            objectName: "nodes[85]"
+            position: Qt.vector3d(-61.7361, 8.92886, 52.6403)
+            rotation: Qt.quaternion(0.707107, -0.707107, 0, 0)
+            Model {
+                id: ae34_008_roof004
+                objectName: "AE34_008_roof004"
+                scale: Qt.vector3d(0.01, 0.01, 0.01)
+                source: "meshes/ae34_008_roof004_mesh.mesh"
+                materials: [
+                    adskMatAE34_008_roof_material
+                ]
+            }
+        }
+        Node {
+            id: nodes_87_
+            objectName: "nodes[87]"
+            position: Qt.vector3d(-66.165, 6.2121, 51.0236)
+            rotation: Qt.quaternion(0.707107, -0.707107, 0, 0)
+            Model {
+                id: ae34_008_roof005
+                objectName: "AE34_008_roof005"
+                scale: Qt.vector3d(0.01, 0.01, 0.01)
+                source: "meshes/ae34_008_roof005_mesh.mesh"
+                materials: [
+                    adskMatAE34_008_roof_material
+                ]
+            }
+        }
+        Node {
+            id: nodes_89_
+            objectName: "nodes[89]"
+            position: Qt.vector3d(-49.6511, 3.81014, 59.0356)
+            rotation: Qt.quaternion(2.18557e-08, 1, 0, 0)
+            Model {
+                id: ae34_008_glass_04220
+                objectName: "AE34_008_glass_04"
+                scale: Qt.vector3d(0.01, 0.01, 0.01)
+                source: "meshes/ae34_008_glass_04_mesh.mesh"
+                materials: [
+                    ae34_008_Building_fance_02_material
+                ]
+            }
+        }
+        Node {
+            id: nodes_91_
+            objectName: "nodes[91]"
+            position: Qt.vector3d(-49.6511, 0.147835, 56.2317)
+            rotation: Qt.quaternion(0.707107, -0.707107, 0, 0)
+            Model {
+                id: ae34_008_glass_04222
+                objectName: "AE34_008_glass_04"
+                scale: Qt.vector3d(0.01, 0.01, 0.01)
+                source: "meshes/ae34_008_glass_04_mesh.mesh"
+                materials: [
+                    ae34_008_Building_fance_02_material
+                ]
+            }
+        }
+        Node {
+            id: nodes_93_
+            objectName: "nodes[93]"
+            position: Qt.vector3d(-44.3757, 0.771624, 59.3506)
+            rotation: Qt.quaternion(0.5, -0.5, 0.5, 0.5)
+            Model {
+                id: ae34_008_glass_04224
+                objectName: "AE34_008_glass_04"
+                scale: Qt.vector3d(0.01, 0.01, 0.01)
+                source: "meshes/ae34_008_glass_04_mesh.mesh"
+                materials: [
+                    ae34_008_Building_fance_02_material
+                ]
+            }
+        }
+        Node {
+            id: nodes_95_
+            objectName: "nodes[95]"
+            position: Qt.vector3d(-45.5458, 0.771624, 59.3506)
+            rotation: Qt.quaternion(0.5, -0.5, 0.5, 0.5)
+            Model {
+                id: ae34_008_glass_04226
+                objectName: "AE34_008_glass_04"
+                scale: Qt.vector3d(0.01, 0.01, 0.01)
+                source: "meshes/ae34_008_glass_04_mesh.mesh"
+                materials: [
+                    ae34_008_Building_fance_02_material
+                ]
+            }
+        }
+        Node {
+            id: nodes_97_
+            objectName: "nodes[97]"
+            position: Qt.vector3d(-55.0132, -0.727866, 60.3699)
+            rotation: Qt.quaternion(0.5, -0.5, 0.5, 0.5)
+            Model {
+                id: ae34_008_pillar
+                objectName: "AE34_008_pillar"
+                scale: Qt.vector3d(0.01, 0.01, 0.01)
+                source: "meshes/ae34_008_pillar_mesh.mesh"
+                materials: [
+                    ae34_008_window_elements_material
+                ]
+            }
+        }
+        Node {
+            id: nodes_99_
+            objectName: "nodes[99]"
+            position: Qt.vector3d(-68.029, 3.86254, 54.202)
+            rotation: Qt.quaternion(-0.5, 0.5, 0.5, 0.5)
+            Model {
+                id: am107_026_white
+                objectName: "AM107_026_white"
+                scale: Qt.vector3d(0.01, 0.01, 0.01)
+                source: "meshes/am107_026_white_mesh.mesh"
+                materials: [
+                    adskMatAM107_026_white_material
+                ]
+            }
+        }
+        Node {
+            id: nodes_101_
+            objectName: "nodes[101]"
+            position: Qt.vector3d(-68.0948, 3.86202, 54.202)
+            rotation: Qt.quaternion(-0.5, 0.5, 0.5, 0.5)
+            Model {
+                id: am107_026_glass
+                objectName: "AM107_026_glass"
+                scale: Qt.vector3d(0.01, 0.01, 0.01)
+                source: "meshes/am107_026_glass_mesh.mesh"
+                materials: [
+                    adskMatAM107_026_glass_material
+                ]
+            }
+        }
+        Node {
+            id: nodes_103_
+            objectName: "nodes[103]"
+            position: Qt.vector3d(-68.0946, 3.86267, 54.202)
+            rotation: Qt.quaternion(-0.5, 0.5, 0.5, 0.5)
+            Model {
+                id: am107_026_black
+                objectName: "AM107_026_black"
+                scale: Qt.vector3d(0.01, 0.01, 0.01)
+                source: "meshes/am107_026_black_mesh.mesh"
+                materials: [
+                    adskMatAM107_026_black_material
+                ]
+            }
+        }
+        Node {
+            id: nodes_105_
+            objectName: "nodes[105]"
+            position: Qt.vector3d(-68.0474, 3.86331, 54.202)
+            rotation: Qt.quaternion(-0.5, 0.5, 0.5, 0.5)
+            Model {
+                id: am107_026_metal
+                objectName: "AM107_026_metal"
+                scale: Qt.vector3d(0.01, 0.01, 0.01)
+                source: "meshes/am107_026_metal_mesh.mesh"
+                materials: [
+                    adskMatAM107_026_metal_material
+                ]
+            }
+        }
+        Node {
+            id: nodes_107_
+            objectName: "nodes[107]"
+            position: Qt.vector3d(-66.1609, 3.86202, 55.9438)
+            rotation: Qt.quaternion(0.707107, -0.707107, 0, 0)
+            Model {
+                id: am107_026_glass252
+                objectName: "AM107_026_glass"
+                scale: Qt.vector3d(0.01, 0.01, 0.01)
+                source: "meshes/am107_026_glass_mesh.mesh"
+                materials: [
+                    adskMatAM107_026_glass_material
+                ]
+            }
+        }
+        Node {
+            id: nodes_109_
+            objectName: "nodes[109]"
+            position: Qt.vector3d(-66.1609, 3.86267, 55.9435)
+            rotation: Qt.quaternion(0.707107, -0.707107, 0, 0)
+            Model {
+                id: am107_026_black254
+                objectName: "AM107_026_black"
+                scale: Qt.vector3d(0.01, 0.01, 0.01)
+                source: "meshes/am107_026_black_mesh.mesh"
+                materials: [
+                    adskMatAM107_026_black_material
+                ]
+            }
+        }
+        Node {
+            id: nodes_111_
+            objectName: "nodes[111]"
+            position: Qt.vector3d(-59.7654, 3.86202, 55.9438)
+            rotation: Qt.quaternion(0.707107, -0.707107, 0, 0)
+            Model {
+                id: am107_026_glass256
+                objectName: "AM107_026_glass"
+                scale: Qt.vector3d(0.01, 0.01, 0.01)
+                source: "meshes/am107_026_glass_mesh.mesh"
+                materials: [
+                    adskMatAM107_026_glass_material
+                ]
+            }
+        }
+        Node {
+            id: nodes_113_
+            objectName: "nodes[113]"
+            position: Qt.vector3d(-59.7654, 3.86267, 55.9435)
+            rotation: Qt.quaternion(0.707107, -0.707107, 0, 0)
+            Model {
+                id: am107_026_black258
+                objectName: "AM107_026_black"
+                scale: Qt.vector3d(0.01, 0.01, 0.01)
+                source: "meshes/am107_026_black_mesh.mesh"
+                materials: [
+                    adskMatAM107_026_black_material
+                ]
+            }
+        }
+        Node {
+            id: nodes_115_
+            objectName: "nodes[115]"
+            position: Qt.vector3d(-50.8683, 3.86202, 55.9438)
+            rotation: Qt.quaternion(0.707107, -0.707107, 0, 0)
+            Model {
+                id: am107_026_glass260
+                objectName: "AM107_026_glass"
+                scale: Qt.vector3d(0.01, 0.01, 0.01)
+                source: "meshes/am107_026_glass_mesh.mesh"
+                materials: [
+                    adskMatAM107_026_glass_material
+                ]
+            }
+        }
+        Node {
+            id: nodes_117_
+            objectName: "nodes[117]"
+            position: Qt.vector3d(-50.8683, 3.86267, 55.9435)
+            rotation: Qt.quaternion(0.707107, -0.707107, 0, 0)
+            Model {
+                id: am107_026_black262
+                objectName: "AM107_026_black"
+                scale: Qt.vector3d(0.01, 0.01, 0.01)
+                source: "meshes/am107_026_black_mesh.mesh"
+                materials: [
+                    adskMatAM107_026_black_material
+                ]
+            }
+        }
+        Node {
+            id: nodes_119_
+            objectName: "nodes[119]"
+            position: Qt.vector3d(-46.7942, 0.183325, 60.1129)
+            rotation: Qt.quaternion(0.707107, -0.707107, 0, 0)
+            Model {
+                id: ae34_008_Concrete_A
+                objectName: "AE34_008_Concrete_A"
+                scale: Qt.vector3d(0.01, 0.01, 0.01)
+                source: "meshes/ae34_008_Concrete_A_mesh.mesh"
+                materials: [
+                    adskMatAE34_008_Concrete_A_material
+                ]
+            }
+        }
+        Node {
+            id: nodes_139_
+            objectName: "nodes[139]"
+            position: Qt.vector3d(-60.1672, -0.0762076, 57.4422)
+            rotation: Qt.quaternion(0.707102, -0.707102, 0.00246826, -0.00246826)
+            Model {
+                id: ae34_008_Road001
+                objectName: "AE34_008_Road001"
+                scale: Qt.vector3d(0.01, 0.01, 0.01)
+                source: "meshes/ae34_008_Road001_mesh.mesh"
+                materials: [
+                    adskMatAE34_008_Road_material
+                ]
+            }
+        }
+        Node {
+            id: nodes_141_
+            objectName: "nodes[141]"
+            position: Qt.vector3d(-62.0336, 0, 54.4459)
+            rotation: Qt.quaternion(0.707107, -0.707107, 0, 0)
+            Model {
+                id: line001
+                objectName: "Line001"
+                scale: Qt.vector3d(0.01, 0.01, 0.01)
+                source: "meshes/line001_mesh.mesh"
+                materials: [
+                    adskMatAE34_008_Concrete_A_material
+                ]
+            }
+        }
+    }
+
+    Node {
+        id: __materialLibrary__
+
+        Texture {
+            id: _19_texture
+            pivotV: 1
+            scaleU: 2
+            scaleV: 0.5
+            source: node.textureData127
+            objectName: "_19_texture"
+        }
+
+        Texture {
+            id: _0_texture
+            source: node.textureData7
+            objectName: "_0_texture"
+        }
+
+        Texture {
+            id: _1_texture
+            source: node.textureData9
+            objectName: "_1_texture"
+        }
+
+        Texture {
+            id: _13_texture
+            source: node.textureData104
+            objectName: "_13_texture"
+        }
+
+        Texture {
+            id: _2_texture
+            source: node.textureData15
+            objectName: "_2_texture"
+        }
+
+        Texture {
+            id: _3_texture
+            source: node.textureData17
+            objectName: "_3_texture"
+        }
+
+        Texture {
+            id: _14_texture
+            source: node.textureData106
+            objectName: "_14_texture"
+        }
+
+        Texture {
+            id: _17_texture
+            source: node.textureData122
+            objectName: "_17_texture"
+        }
+
+        Texture {
+            id: _18_texture
+            source: node.textureData124
+            objectName: "_18_texture"
+        }
+
+        Texture {
+            id: _4_texture
+            source: node.textureData
+            objectName: "_4_texture"
+        }
+
+        Texture {
+            id: _5_texture
+            source: node.textureData38
+            objectName: "_5_texture"
+        }
+
+        Texture {
+            id: _15_texture
+            source: node.textureData115
+            objectName: "_15_texture"
+        }
+
+        Texture {
+            id: _6_texture
+            source: node.textureData44
+            objectName: "_6_texture"
+        }
+
+        Texture {
+            id: _7_texture
+            source: node.textureData46
+            objectName: "_7_texture"
+        }
+
+        Texture {
+            id: _16_texture
+            source: node.textureData117
+            objectName: "_16_texture"
+        }
+
+        Texture {
+            id: _12_texture
+            pivotV: 1
+            scaleU: 10
+            scaleV: 10
+            source: node.textureData96
+            objectName: "_12_texture"
+        }
+
+        Texture {
+            id: _8_texture
+            source: node.textureData52
+            objectName: "_8_texture"
+        }
+
+        Texture {
+            id: _9_texture
+            source: node.textureData54
+            objectName: "_9_texture"
+        }
+
+        Texture {
+            id: _23_texture
+            source: node.textureData144
+            objectName: "_23_texture"
+        }
+
+        Texture {
+            id: _28_texture
+            source: node.textureData187
+            objectName: "_28_texture"
+        }
+
+        Texture {
+            id: _21_texture
+            source: node.textureData136
+            objectName: "_21_texture"
+        }
+
+        Texture {
+            id: _29_texture
+            source: node.textureData193
+            objectName: "_29_texture"
+        }
+
+        Texture {
+            id: _24_texture
+            source: node.textureData153
+            objectName: "_24_texture"
+        }
+
+        Texture {
+            id: _30_texture
+            source: node.textureData195
+            objectName: "_30_texture"
+        }
+
+        Texture {
+            id: _20_texture
+            source: node.textureData134
+            objectName: "_20_texture"
+        }
+
+        Texture {
+            id: _31_texture
+            source: node.textureData201
+            objectName: "_31_texture"
+        }
+
+        Texture {
+            id: _25_texture
+            source: node.textureData159
+            objectName: "_25_texture"
+        }
+
+        Texture {
+            id: _10_texture
+            source: node.textureData60
+            objectName: "_10_texture"
+        }
+
+        Texture {
+            id: _22_texture
+            source: node.textureData142
+            objectName: "_22_texture"
+        }
+
+        Texture {
+            id: _33_texture
+            source: node.textureData232
+            objectName: "_33_texture"
+        }
+
+        Texture {
+            id: _26_texture
+            source: node.textureData173
+            objectName: "_26_texture"
+        }
+
+        Texture {
+            id: _34_texture
+            source: node.textureData234
+            objectName: "_34_texture"
+        }
+
+        Texture {
+            id: _11_texture
+            source: node.textureData62
+            objectName: "_11_texture"
+        }
+
+        Texture {
+            id: _35_texture
+            source: node.textureData268
+            objectName: "_35_texture"
+        }
+
+        Texture {
+            id: _27_texture
+            source: node.textureData185
+            objectName: "_27_texture"
+        }
+
+        Texture {
+            id: _36_texture
+            source: node.textureData270
+            objectName: "_36_texture"
+        }
+
+        Texture {
+            id: _32_texture
+            source: node.textureData203
+            objectName: "_32_texture"
+        }
+
+        PrincipledMaterial {
+            id: adskMatAE34_008_Road_material
+            objectName: "adskMatAE34_008_Road"
+            baseColor: "#ffbbbbbb"
+            baseColorMap: _15_texture
+            metalnessMap: _16_texture
+            roughnessMap: _16_texture
+            roughness: 1
+            alphaMode: PrincipledMaterial.Default
+        }
+
+        PrincipledMaterial {
+            id: am207_020_001_material
+            objectName: "AM207_020_001"
+            baseColor: "#ff4f4b49"
+            baseColorMap: _17_texture
+            metalnessMap: _18_texture
+            roughnessMap: _18_texture
+            roughness: 1
+            alphaMode: PrincipledMaterial.Opaque
+        }
+
+        PrincipledMaterial {
+            id: am207_020_015_material
+            objectName: "AM207_020_015"
+            baseColor: "#ff4f3d26"
+            baseColorMap: _19_texture
+            roughness: 0.5
+            alphaMode: PrincipledMaterial.Opaque
+        }
+
+        PrincipledMaterial {
+            id: adskMatAE34_008_Garage_Door_material
+            objectName: "adskMatAE34_008_Garage_Door"
+            baseColor: "#ffbbbbbb"
+            baseColorMap: _20_texture
+            metalnessMap: _21_texture
+            roughnessMap: _21_texture
+            roughness: 1
+            alphaMode: PrincipledMaterial.Opaque
+        }
+
+        PrincipledMaterial {
+            id: ae34_008_Building_fance_02_material
+            objectName: "AE34_008_Building_fance_02"
+            baseColor: "#ffbbbbbb"
+            baseColorMap: _0_texture
+            metalnessMap: _1_texture
+            roughnessMap: _1_texture
+            roughness: 1
+            alphaMode: PrincipledMaterial.Opaque
+        }
+
+        PrincipledMaterial {
+            id: ae34_008_Building_Dark_material
+            objectName: "AE34_008_Building_Dark"
+            baseColor: "#ffbbbbbb"
+            baseColorMap: _2_texture
+            metalnessMap: _3_texture
+            roughnessMap: _3_texture
+            roughness: 1
+            alphaMode: PrincipledMaterial.Opaque
+        }
+
+        PrincipledMaterial {
+            id: adskMatAE34_008_House_Door_material
+            objectName: "adskMatAE34_008_House_Door"
+            baseColor: "#ffbbbbbb"
+            baseColorMap: _22_texture
+            metalnessMap: _23_texture
+            roughnessMap: _23_texture
+            roughness: 1
+            alphaMode: PrincipledMaterial.Opaque
+        }
+
+        PrincipledMaterial {
+            id: ae34_008_Building_fance_01_material
+            objectName: "AE34_008_Building_fance_01"
+            baseColor: "#ff2e2e2e"
+            roughness: 1
+            alphaMode: PrincipledMaterial.Opaque
+        }
+
+        PrincipledMaterial {
+            id: ae34_008_Fance_flowers_material
+            objectName: "AE34_008_Fance_flowers"
+            baseColor: "#ffbbbbbb"
+            baseColorMap: _24_texture
+            roughness: 0.7099999785423279
+            alphaMode: PrincipledMaterial.Opaque
+        }
+
+        PrincipledMaterial {
+            id: adskMatAE34_008_Building_Dark_Down_material
+            objectName: "adskMatAE34_008_Building_Dark_Down"
+            baseColor: "#ffbbbbbb"
+            baseColorMap: _4_texture
+            metalnessMap: _5_texture
+            roughnessMap: _5_texture
+            roughness: 1
+            alphaMode: PrincipledMaterial.Opaque
+        }
+
+        PrincipledMaterial {
+            id: ae34_008_Branch_material
+            objectName: "AE34_008_Branch"
+            baseColor: "#ff8c8181"
+            baseColorMap: _25_texture
+            roughness: 1
+            alphaMode: PrincipledMaterial.Opaque
+        }
+
+        PrincipledMaterial {
+            id: ae34_008_Concrete_C_material
+            objectName: "AE34_008_Concrete_C"
+            baseColor: "#ffbbbbbb"
+            baseColorMap: _6_texture
+            metalnessMap: _7_texture
+            roughnessMap: _7_texture
+            roughness: 1
+            alphaMode: PrincipledMaterial.Opaque
+        }
+
+        PrincipledMaterial {
+            id: am126_020_v2_02_material
+            objectName: "AM126_020_v2_02"
+            baseColor: "#ffbbbbbb"
+            baseColorMap: _26_texture
+            roughness: 0.699999988079071
+            alphaMode: PrincipledMaterial.Opaque
+            transmissionFactor: 0.03137259930372238
+        }
+
+        PrincipledMaterial {
+            id: ae34_008_Concrete_B_material
+            objectName: "AE34_008_Concrete_B"
+            baseColor: "#ffbbbbbb"
+            baseColorMap: _8_texture
+            metalnessMap: _9_texture
+            roughnessMap: _9_texture
+            roughness: 1
+            alphaMode: PrincipledMaterial.Opaque
+        }
+
+        PrincipledMaterial {
+            id: ae34_008_wood_A_material
+            objectName: "AE34_008_wood_A"
+            baseColor: "#ffbbbbbb"
+            baseColorMap: _27_texture
+            metalnessMap: _28_texture
+            roughnessMap: _28_texture
+            roughness: 1
+            alphaMode: PrincipledMaterial.Opaque
+        }
+
+        PrincipledMaterial {
+            id: adskMatAE34_008_back_stairs_material
+            objectName: "adskMatAE34_008_back_stairs"
+            baseColor: "#ffbbbbbb"
+            baseColorMap: _10_texture
+            metalnessMap: _11_texture
+            roughnessMap: _11_texture
+            roughness: 1
+            alphaMode: PrincipledMaterial.Opaque
+        }
+
+        PrincipledMaterial {
+            id: ae34_008_wood_B_material
+            objectName: "AE34_008_wood_B"
+            baseColor: "#ffbbbbbb"
+            baseColorMap: _29_texture
+            metalnessMap: _30_texture
+            roughnessMap: _30_texture
+            roughness: 1
+            alphaMode: PrincipledMaterial.Opaque
+        }
+
+        PrincipledMaterial {
+            id: fallback_Material_material
+            objectName: "fallback Material"
+            baseColor: "#ff9e9ef1"
+            metalness: 1
+            roughness: 1
+            alphaMode: PrincipledMaterial.Opaque
+        }
+
+        PrincipledMaterial {
+            id: adskMatAE34_008_roof_material
+            objectName: "adskMatAE34_008_roof"
+            baseColor: "#ffbbbbbb"
+            baseColorMap: _31_texture
+            metalnessMap: _32_texture
+            roughnessMap: _32_texture
+            roughness: 1
+            alphaMode: PrincipledMaterial.Opaque
+        }
+
+        PrincipledMaterial {
+            id: ae34_008_window_elements_material
+            objectName: "AE34_008_window_elements"
+            baseColor: "#ffbbbbbb"
+            baseColorMap: _33_texture
+            metalnessMap: _34_texture
+            roughnessMap: _34_texture
+            roughness: 1
+            alphaMode: PrincipledMaterial.Opaque
+        }
+
+        PrincipledMaterial {
+            id: ae34_008_Ground_material
+            objectName: "AE34_008_Ground"
+            baseColor: "#ffbbbbbb"
+            baseColorMap: _12_texture
+            roughness: 1
+            alphaMode: PrincipledMaterial.Opaque
+        }
+
+        PrincipledMaterial {
+            id: adskMatAM107_026_white_material
+            objectName: "adskMatAM107_026_white"
+            baseColor: "#fffdfdfd"
+            roughness: 1
+            alphaMode: PrincipledMaterial.Opaque
+        }
+
+        PrincipledMaterial {
+            id: adskMatAM107_026_glass_material
+            objectName: "adskMatAM107_026_glass"
+            baseColor: "#fffdfdfd"
+            roughness: 0.8600000143051147
+            alphaMode: PrincipledMaterial.Opaque
+            transmissionFactor: 0.784313976764679
+        }
+
+        PrincipledMaterial {
+            id: adskMatAM107_026_black_material
+            objectName: "adskMatAM107_026_black"
+            baseColor: "#ff4f4f4f"
+            roughness: 0.6600000262260437
+            alphaMode: PrincipledMaterial.Opaque
+        }
+
+        PrincipledMaterial {
+            id: adskMatAM107_026_metal_material
+            objectName: "adskMatAM107_026_metal"
+            baseColor: "#ff585858"
+            roughness: 0.699999988079071
+            alphaMode: PrincipledMaterial.Opaque
+        }
+
+        PrincipledMaterial {
+            id: adskMatAE34_008_Concrete_A_material
+            objectName: "adskMatAE34_008_Concrete_A"
+            baseColor: "#ffbbbbbb"
+            baseColorMap: _35_texture
+            metalnessMap: _36_texture
+            roughnessMap: _36_texture
+            roughness: 1
+            alphaMode: PrincipledMaterial.Opaque
+        }
+
+        PrincipledMaterial {
+            id: am204_030_02_material
+            objectName: "AM204_030_02"
+            baseColor: "#ff45382e"
+            baseColorMap: _13_texture
+            metalnessMap: _14_texture
+            roughnessMap: _14_texture
+            roughness: 0.5
+            alphaMode: PrincipledMaterial.Opaque
+        }
+
+        PrincipledMaterial {
+            id: fallback_Material_material107
+            objectName: "fallback Material"
+            baseColor: "#ff000000"
+            metalness: 1
+            roughness: 1
+            alphaMode: PrincipledMaterial.Opaque
+        }
+
+        PrincipledMaterial {
+            id: am204_030_06_material
+            objectName: "AM204_030_06"
+            baseColor: "#ff35511c"
+            roughness: 0.6000000238418579
+            alphaMode: PrincipledMaterial.Opaque
+        }
+    }
+
+    // Model {
+    //     id: cube
+    //     x: -19.512
+    //     y: -19.232
+    //     source: "#Cube"
+    //     scale.z: 1
+    //     scale.y: 0.39068
+    //     scale.x: 1.77675
+    //     z: 36.47996
+    //     materials: adskMatAE34_008_Road_material1
+    // }
+    // PrincipledMaterial {
+    //     id: adskMatAE34_008_Road_material1
+    //     objectName: "adskMatAE34_008_Road"
+    //     baseColor: "#ffbbbbbb"
+    //     baseColorMap: _15_texture
+    //     metalnessMap: _16_texture
+    //     roughnessMap: _16_texture
+    //     roughness: 1
+    //     alphaMode: PrincipledMaterial.Default
+    // }
+
+
+
+    // Animations:
+}
+
+/*##^##
+Designer {
+    D{i:0;cameraSpeed3d:25;cameraSpeed3dMultiplier:1}
+}
+##^##*/

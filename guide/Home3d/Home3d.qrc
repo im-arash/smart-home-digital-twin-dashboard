@@ -1,0 +1,11 @@
+<RCC>
+    <qresource>
+        <file>exterior/Exterior.qml</file>
+        <file>exterior/ExteriorStatic.qml</file>
+        <file>Home3d.qmlproject</file>
+        <file>interior/Interior.qml</file>
+        <file>Main.qml</file>
+        <file>Main3dScene.ui.qml</file>
+        <file>ThermostatTintOverlay.qml</file>
+    </qresource>
+</RCC>
